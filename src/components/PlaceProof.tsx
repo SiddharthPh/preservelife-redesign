@@ -13,8 +13,8 @@ export function PlaceProof() {
     <section id="the-land" className="bg-stone-100 py-24 lg:py-36">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-10">
         <div className="grid gap-14 lg:grid-cols-12 lg:gap-10">
-          <Reveal className="lg:col-span-7">
-            <div className="aspect-[16/11] overflow-hidden">
+          <Reveal className="-mx-6 lg:col-span-7 lg:mx-0">
+            <div className="aspect-[4/5] overflow-hidden lg:aspect-[16/11]">
               <img
                 src="/images/home-page/Aerial-Wellness-web-1-1536x854.webp"
                 srcSet="

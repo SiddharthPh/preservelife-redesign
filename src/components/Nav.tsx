@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from './ui/Button';
 import { cn } from '../lib/cn';
@@ -15,6 +15,9 @@ const links = [
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const drawerRef = useRef<HTMLDivElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 48);
@@ -24,15 +27,41 @@ export function Nav() {
   }, []);
 
   useEffect(() => {
-    if (open) {
-      document.body.style.overflow = 'hidden';
-      const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setOpen(false);
-      window.addEventListener('keydown', onKey);
-      return () => {
-        document.body.style.overflow = '';
-        window.removeEventListener('keydown', onKey);
-      };
-    }
+    if (!open) return;
+
+    const menuButton = menuButtonRef.current;
+    document.body.style.overflow = 'hidden';
+    closeButtonRef.current?.focus();
+
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setOpen(false);
+        return;
+      }
+      if (e.key !== 'Tab' || !drawerRef.current) return;
+
+      const focusable = drawerRef.current.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled])',
+      );
+      if (focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    };
+
+    window.addEventListener('keydown', onKey);
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', onKey);
+      menuButton?.focus();
+    };
   }, [open]);
 
   return (
@@ -69,6 +98,7 @@ export function Nav() {
         </div>
 
         <button
+          ref={menuButtonRef}
           type="button"
           onClick={() => setOpen(true)}
           aria-label="Open menu"
@@ -80,12 +110,19 @@ export function Nav() {
       </div>
 
       {open && (
-        <div className="fixed inset-0 z-50 flex flex-col bg-canopy-950 lg:hidden">
+        <div
+          ref={drawerRef}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Mobile navigation"
+          className="fixed inset-0 z-50 flex flex-col bg-canopy-950 lg:hidden"
+        >
           <div className="flex items-center justify-between px-6 py-5">
             <span id="logo" className="block h-7 w-auto">
               <img src="/images/logos/main-logo.png" alt="Preserve Life" className="h-7 w-auto" />
             </span>
             <button
+              ref={closeButtonRef}
               type="button"
               onClick={() => setOpen(false)}
               aria-label="Close menu"

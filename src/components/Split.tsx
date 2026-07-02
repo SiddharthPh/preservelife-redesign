@@ -29,7 +29,7 @@ export function Split({
   heading,
   children,
   image,
-  aspect = 'aspect-[4/3]',
+  aspect = 'aspect-[4/5] lg:aspect-[4/3]',
   footer,
 }: SplitProps) {
   const reduceMotion = useReducedMotion();
@@ -41,7 +41,12 @@ export function Split({
     >
       <div className="mx-auto max-w-[1440px] px-6 lg:px-10">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-10">
-          <Reveal className={cn('lg:col-span-6', reverse ? 'lg:order-last lg:col-start-7' : 'lg:col-span-6')}>
+          <Reveal
+            className={cn(
+              '-mx-6 lg:mx-0',
+              reverse ? 'lg:order-last lg:col-span-6 lg:col-start-7' : 'lg:col-span-6',
+            )}
+          >
             <div className={cn(aspect, 'overflow-hidden')}>
               <m.img
                 src={image.src}

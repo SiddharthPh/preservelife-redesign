@@ -16,12 +16,12 @@ export function Invitation() {
   }
 
   return (
-    <section id="invitation" className="bg-canopy-950 py-24 lg:py-36">
+    <section id="invitation" className="bg-canopy-950 py-28 lg:py-44">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-10">
         <div className="grid gap-16 lg:grid-cols-12 lg:gap-10">
           <Reveal className="lg:col-span-5">
             <Eyebrow tone="light">The Invitation</Eyebrow>
-            <h2 className="mt-4 font-display text-3xl leading-tight text-stone-100 sm:text-4xl">
+            <h2 className="mt-4 font-display text-4xl leading-tight text-stone-100 sm:text-5xl">
               Preserve Life is not open to the public.
             </h2>
             <p className="mt-5 max-w-md text-stone-100/70 leading-relaxed">

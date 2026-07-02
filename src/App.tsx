@@ -31,7 +31,7 @@ function App() {
           tone="dark"
           eyebrow="Longevity Labs"
           heading="Data, not guesswork."
-          aspect="aspect-[7/4]"
+          aspect="aspect-[4/5] lg:aspect-[7/4]"
           image={{
             src: '/images/home-page/1-1-1536x889.webp',
             srcSet:
@@ -54,7 +54,7 @@ function App() {
           reverse
           eyebrow="Sleep Suites"
           heading="Ten hours of undisturbed forest."
-          aspect="aspect-[5/3]"
+          aspect="aspect-[4/5] lg:aspect-[5/3]"
           image={{
             src: '/images/home-page/Lodge-Window-View-web-jpg.webp',
             srcSet:
@@ -75,7 +75,7 @@ function App() {
           tone="dark"
           eyebrow="Nutrition Nest · Only Organics"
           heading="From greenhouse to plate, same afternoon."
-          aspect="aspect-[2/1]"
+          aspect="aspect-[4/5] lg:aspect-[2/1]"
           image={{
             src: '/images/home-page/230412_Wellness-center-Interior-Nutrition-Area-57-copy-1536x786.webp',
             srcSet:
@@ -98,7 +98,7 @@ function App() {
           reverse
           eyebrow="Corporate Homes"
           heading="Where leadership recovers off the record."
-          aspect="aspect-[6/5]"
+          aspect="aspect-[4/5] lg:aspect-[6/5]"
           image={{
             src: '/images/home-page/1-2-768x648.webp',
             srcSet: '/images/home-page/1-2-300x253.webp 300w, /images/home-page/1-2-768x648.webp 768w',
