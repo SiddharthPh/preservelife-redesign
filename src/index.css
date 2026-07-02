@@ -1,0 +1,127 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-canopy-950: #101c16;
+  --color-canopy-900: #16241c;
+  --color-canopy-800: #1c2b22;
+  --color-canopy-700: #263a2d;
+
+  --color-stone-100: #f4efe4;
+  --color-stone-200: #ece4d3;
+  --color-stone-300: #ddd2b8;
+
+  --color-ink-900: #22271f;
+  --color-ink-700: #3a4136;
+
+  --color-mist-400: #c7cdbf;
+  --color-mist-500: #a9b09c;
+
+  --color-gold-400: #c9a461;
+  --color-gold-500: #b08a4e;
+  --color-gold-600: #93713d;
+  --color-gold-700: #7d5f34;
+
+  --color-amber-400: #d99a55;
+
+  --color-plaque: #060606;
+
+  --font-display: 'Fraunces', 'Iowan Old Style', ui-serif, serif;
+  --font-body:
+    'Instrument Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', monospace;
+
+  --radius-xs: 2px;
+  --radius-sm: 3px;
+
+  --ease-whisper: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-stone-100);
+    color: var(--color-ink-900);
+    font-family: var(--font-body);
+    font-feature-settings: 'ss01' 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background: var(--color-gold-500);
+    color: var(--color-canopy-950);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-gold-500);
+    outline-offset: 3px;
+  }
+
+  .bg-canopy-950 :focus-visible,
+  .bg-canopy-900 :focus-visible,
+  .bg-canopy-800 :focus-visible {
+    outline-color: var(--color-gold-400);
+  }
+
+  #logo img {
+    filter: brightness(10);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+
+  .canopy-drift {
+    background:
+      radial-gradient(ellipse 60% 45% at 20% 15%, rgb(201 164 97 / 10%), transparent 70%),
+      radial-gradient(ellipse 50% 40% at 82% 70%, rgb(217 154 85 / 8%), transparent 70%);
+    animation: canopy-drift 70s var(--ease-whisper) infinite alternate;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .canopy-drift {
+      animation: none;
+    }
+  }
+}
+
+@keyframes canopy-drift {
+  0% {
+    background-position:
+      0% 0%,
+      100% 100%;
+  }
+  100% {
+    background-position:
+      6% 8%,
+      92% 88%;
+  }
+}
