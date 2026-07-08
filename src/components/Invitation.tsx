@@ -4,8 +4,8 @@ import { Eyebrow } from './ui/Eyebrow';
 import { Button } from './ui/Button';
 
 const fieldClasses =
-  'w-full border-b border-stone-100/25 bg-transparent py-3 text-stone-100 placeholder:text-stone-100/60 focus:border-gold-400 focus:outline-none transition-colors';
-const labelClasses = 'font-mono text-[11px] uppercase tracking-[0.14em] text-stone-100/60';
+  'w-full border-b border-limestone-100/25 bg-transparent py-3 text-limestone-100 placeholder:text-limestone-100/60 focus:border-metallic-bronze-400 focus:outline-none transition-colors';
+const labelClasses = 'font-micro text-[11px] uppercase tracking-[0.14em] text-limestone-100/60';
 
 export function Invitation() {
   const [submitted, setSubmitted] = useState(false);
@@ -16,15 +16,15 @@ export function Invitation() {
   }
 
   return (
-    <section id="invitation" className="bg-canopy-950 py-28 lg:py-44">
+    <section id="invitation" className="bg-deep-forest-950 py-20 lg:py-32">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-10">
         <div className="grid gap-16 lg:grid-cols-12 lg:gap-10">
           <Reveal className="lg:col-span-5">
             <Eyebrow tone="light">The Invitation</Eyebrow>
-            <h2 className="mt-4 font-display text-4xl leading-tight text-stone-100 sm:text-5xl">
+            <h2 className="mt-4 font-heading text-4xl leading-tight text-limestone-100 sm:text-5xl">
               Preserve Life is not open to the public.
             </h2>
-            <p className="mt-5 max-w-md text-stone-100/70 leading-relaxed">
+            <p className="mt-5 max-w-md text-limestone-100/70 leading-relaxed">
               Access begins with a private conversation, not an application form. Tell us a little
               about yourself, and we&apos;ll be in touch.
             </p>
@@ -32,9 +32,9 @@ export function Invitation() {
 
           <Reveal delay={0.1} className="lg:col-span-6 lg:col-start-7">
             {submitted ? (
-              <div className="border border-stone-100/15 p-8">
-                <p className="font-display text-2xl text-stone-100">Thank you.</p>
-                <p className="mt-3 text-stone-100/70">
+              <div className="border border-limestone-100/15 p-8">
+                <p className="font-heading text-2xl text-limestone-100">Thank you.</p>
+                <p className="mt-3 text-limestone-100/70">
                   Your request has been received. A member of our team will reach out privately
                   within a few days.
                 </p>
@@ -57,14 +57,14 @@ export function Invitation() {
 
                 <div className="flex flex-col gap-2">
                   <label className={labelClasses} htmlFor="phone">
-                    Phone <span className="normal-case tracking-normal text-stone-100/60">(optional)</span>
+                    Phone <span className="normal-case tracking-normal text-limestone-100/60">(optional)</span>
                   </label>
                   <input id="phone" name="phone" type="tel" autoComplete="tel" className={fieldClasses} />
                 </div>
 
                 <div className="flex flex-col gap-2 sm:col-span-2">
                   <label className={labelClasses} htmlFor="message">
-                    What brings you to Preserve Life? <span className="normal-case tracking-normal text-stone-100/60">(optional)</span>
+                    What brings you to Preserve Life? <span className="normal-case tracking-normal text-limestone-100/60">(optional)</span>
                   </label>
                   <textarea id="message" name="message" rows={3} className={fieldClasses + ' resize-none'} />
                 </div>

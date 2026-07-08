@@ -1,34 +1,81 @@
 @import 'tailwindcss';
 
+/*
+ * Gill Sans Nova — brand typeface.
+ *
+ * PROVISIONAL / TEMPORARY SOURCE: this single face was sourced from a
+ * free-font redistribution bundle (OnlineWebFonts.com), not a confirmed
+ * commercial web-license. Its own license file admits fonts there "may be
+ * trial versions" requiring a paid license for embedding. This has been
+ * knowingly accepted as a stand-in so implementation could proceed — it
+ * must be replaced with a properly licensed webfont before public launch.
+ *
+ * It is also the ONLY weight available (no Light, no SemiBold, no true
+ * Italic). font-heading / font-body / font-micro below all resolve to this
+ * one 400-normal face today. Visual hierarchy between the three brand type
+ * roles is carried by size/case/tracking/color, not by weight, until real
+ * Light + SemiBold (+ italic) weights are licensed. See index.html for the
+ * matching preload.
+ */
+@font-face {
+  font-family: 'Gill Sans Nova';
+  src:
+    url('/fonts/OnlineWebFonts_COM_87b97c9bf8b383856086b52adca14599/Gill%20Sans%20Nova/Gill%20Sans%20Nova.woff2')
+      format('woff2'),
+    url('/fonts/OnlineWebFonts_COM_87b97c9bf8b383856086b52adca14599/Gill%20Sans%20Nova/Gill%20Sans%20Nova.ttf')
+      format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
-  --color-canopy-950: #101c16;
-  --color-canopy-900: #16241c;
-  --color-canopy-800: #1c2b22;
-  --color-canopy-700: #263a2d;
+  /*
+   * Preserve brand palette — token names follow the official brand
+   * vocabulary, but every hex value below is PROVISIONAL. No official
+   * digital (hex/RGB) values were supplied for the Preserve palette, so
+   * these are the existing design's closest visual match to each named
+   * color, carried forward unchanged. Do not treat these as authoritative
+   * brand hex values — re-verify against the real spec when it's available.
+   *
+   * Deep Lotus, Leaf, Lotus Bloom, and Blush have no equivalent in the
+   * current design and are intentionally NOT defined here — see the
+   * implementation notes for why.
+   */
+  --color-deep-forest-950: #101c16; /* provisional: Deep Forest */
+  --color-deep-forest-900: #16241c; /* provisional: Deep Forest, tint */
+  --color-deep-forest-800: #1c2b22; /* provisional: Deep Forest, tint */
+  --color-deep-forest-700: #263a2d; /* provisional: Deep Forest, tint */
 
-  --color-stone-100: #f4efe4;
-  --color-stone-200: #ece4d3;
-  --color-stone-300: #ddd2b8;
+  --color-limestone-100: #f4efe4; /* provisional: Limestone */
+  --color-limestone-200: #ece4d3; /* provisional: Limestone, tint */
+  --color-limestone-300: #ddd2b8; /* provisional: Limestone, tint */
 
-  --color-ink-900: #22271f;
-  --color-ink-700: #3a4136;
+  --color-rich-black-900: #22271f; /* provisional: Rich Black */
+  --color-rich-black-700: #3a4136; /* provisional: Rich Black, tint */
 
-  --color-mist-400: #c7cdbf;
-  --color-mist-500: #a9b09c;
+  --color-sage-400: #c7cdbf; /* provisional: Sage */
+  --color-sage-500: #a9b09c; /* provisional: Sage, tint */
 
-  --color-gold-400: #c9a461;
-  --color-gold-500: #b08a4e;
-  --color-gold-600: #93713d;
-  --color-gold-700: #7d5f34;
+  --color-metallic-bronze-300: #d99a55; /* provisional: Metallic Bronze, tint */
+  --color-metallic-bronze-400: #c9a461; /* provisional: Metallic Bronze */
+  --color-metallic-bronze-500: #b08a4e; /* provisional: Metallic Bronze, tint */
+  --color-metallic-bronze-600: #93713d; /* provisional: Metallic Bronze, tint */
+  --color-metallic-bronze-700: #7d5f34; /* provisional: Metallic Bronze, tint */
 
-  --color-amber-400: #d99a55;
+  --color-smoked-obsidian: #060606; /* provisional: Smoked Obsidian */
 
-  --color-plaque: #060606;
+  --color-pure-white: #ffffff; /* Pure White — unambiguous, not brand-specific */
 
-  --font-display: 'Fraunces', 'Iowan Old Style', ui-serif, serif;
-  --font-body:
-    'Instrument Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', monospace;
+  /*
+   * Type roles per brand spec. All three resolve to the same Gill Sans
+   * Nova face today (see @font-face note above) — kept as separate
+   * variables so each role can be upgraded independently once Light and
+   * SemiBold weights are licensed, without touching component code.
+   */
+  --font-heading: 'Gill Sans Nova', 'Gill Sans', Arial, sans-serif; /* brand: Light (general) / Book (over imagery) — using Book/normal until Light exists */
+  --font-body: 'Gill Sans Nova', 'Gill Sans', Arial, sans-serif; /* brand: Book */
+  --font-micro: 'Gill Sans Nova', 'Gill Sans', Arial, sans-serif; /* brand: SemiBold — using normal weight until SemiBold exists */
 
   --radius-xs: 2px;
   --radius-sm: 3px;
@@ -48,8 +95,8 @@
 
   body {
     margin: 0;
-    background: var(--color-stone-100);
-    color: var(--color-ink-900);
+    background: var(--color-limestone-100);
+    color: var(--color-rich-black-900);
     font-family: var(--font-body);
     font-feature-settings: 'ss01' 1;
     -webkit-font-smoothing: antialiased;
@@ -57,19 +104,19 @@
   }
 
   ::selection {
-    background: var(--color-gold-500);
-    color: var(--color-canopy-950);
+    background: var(--color-metallic-bronze-500);
+    color: var(--color-deep-forest-950);
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-gold-500);
+    outline: 2px solid var(--color-metallic-bronze-500);
     outline-offset: 3px;
   }
 
-  .bg-canopy-950 :focus-visible,
-  .bg-canopy-900 :focus-visible,
-  .bg-canopy-800 :focus-visible {
-    outline-color: var(--color-gold-400);
+  .bg-deep-forest-950 :focus-visible,
+  .bg-deep-forest-900 :focus-visible,
+  .bg-deep-forest-800 :focus-visible {
+    outline-color: var(--color-metallic-bronze-400);
   }
 
   #logo img {
@@ -92,11 +139,14 @@
 }
 
 @layer utilities {
-  .font-display {
-    font-family: var(--font-display);
+  .font-heading {
+    font-family: var(--font-heading);
   }
-  .font-mono {
-    font-family: var(--font-mono);
+  .font-body {
+    font-family: var(--font-body);
+  }
+  .font-micro {
+    font-family: var(--font-micro);
   }
 
   .canopy-drift {

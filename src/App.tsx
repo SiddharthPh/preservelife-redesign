@@ -13,7 +13,7 @@ function App() {
     <LazyMotion features={domAnimation} strict>
       <a
         href="#main"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-6 focus:top-6 focus:z-[100] focus:bg-gold-500 focus:px-4 focus:py-2 focus:font-mono focus:text-xs focus:uppercase focus:tracking-[0.14em] focus:text-canopy-950"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-6 focus:top-6 focus:z-[100] focus:bg-metallic-bronze-500 focus:px-4 focus:py-2 focus:font-micro focus:text-xs focus:uppercase focus:tracking-[0.14em] focus:text-deep-forest-950"
       >
         Skip to main content
       </a>

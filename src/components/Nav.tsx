@@ -68,7 +68,7 @@ export function Nav() {
     <header
       className={cn(
         'fixed inset-x-0 top-0 z-50 transition-colors duration-500',
-        scrolled ? 'bg-canopy-950/90 backdrop-blur-md shadow-[0_1px_0_0_rgb(0,0,0,0.3)]' : 'bg-transparent',
+        scrolled ? 'bg-deep-forest-950/90 backdrop-blur-md shadow-[0_1px_0_0_rgb(0,0,0,0.3)]' : 'bg-transparent',
       )}
     >
       <div className="mx-auto flex max-w-[1440px] items-center justify-between px-6 py-5 lg:px-10">
@@ -82,7 +82,7 @@ export function Nav() {
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="font-mono text-[11px] uppercase tracking-[0.14em] text-stone-100/90 transition-colors hover:text-gold-400"
+                  className="font-micro text-[11px] uppercase tracking-[0.14em] text-limestone-100/90 transition-colors hover:text-metallic-bronze-400"
                 >
                   {link.label}
                 </a>
@@ -103,7 +103,7 @@ export function Nav() {
           onClick={() => setOpen(true)}
           aria-label="Open menu"
           aria-expanded={open}
-          className="flex h-11 w-11 items-center justify-center text-stone-100 lg:hidden"
+          className="flex h-11 w-11 items-center justify-center text-limestone-100 lg:hidden"
         >
           <Menu aria-hidden="true" className="h-6 w-6" />
         </button>
@@ -115,7 +115,7 @@ export function Nav() {
           role="dialog"
           aria-modal="true"
           aria-label="Mobile navigation"
-          className="fixed inset-0 z-50 flex flex-col bg-canopy-950 lg:hidden"
+          className="fixed inset-0 z-50 flex flex-col bg-deep-forest-950 lg:hidden"
         >
           <div className="flex items-center justify-between px-6 py-5">
             <span id="logo" className="block h-7 w-auto">
@@ -126,7 +126,7 @@ export function Nav() {
               type="button"
               onClick={() => setOpen(false)}
               aria-label="Close menu"
-              className="flex h-11 w-11 items-center justify-center text-stone-100"
+              className="flex h-11 w-11 items-center justify-center text-limestone-100"
             >
               <X aria-hidden="true" className="h-6 w-6" />
             </button>
@@ -138,7 +138,7 @@ export function Nav() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="font-display text-3xl text-stone-100/90 py-3 transition-colors hover:text-gold-400"
+                className="font-heading text-3xl text-limestone-100/90 py-3 transition-colors hover:text-metallic-bronze-400"
               >
                 {link.label}
               </a>

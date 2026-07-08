@@ -37,7 +37,7 @@ export function Split({
   return (
     <section
       id={id}
-      className={cn('py-24 lg:py-36', tone === 'dark' ? 'bg-canopy-800' : 'bg-stone-200')}
+      className={cn('py-16 lg:py-24', tone === 'dark' ? 'bg-deep-forest-800' : 'bg-limestone-200')}
     >
       <div className="mx-auto max-w-[1440px] px-6 lg:px-10">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-10">
@@ -68,8 +68,8 @@ export function Split({
               <Eyebrow tone={tone === 'dark' ? 'light' : 'dark'}>{eyebrow}</Eyebrow>
               <h2
                 className={cn(
-                  'mt-4 font-display text-3xl leading-tight sm:text-4xl',
-                  tone === 'dark' ? 'text-stone-100' : 'text-ink-900',
+                  'mt-4 font-heading text-3xl leading-tight sm:text-4xl',
+                  tone === 'dark' ? 'text-limestone-100' : 'text-rich-black-900',
                 )}
               >
                 {heading}
@@ -77,7 +77,7 @@ export function Split({
               <div
                 className={cn(
                   'mt-5 max-w-md leading-relaxed',
-                  tone === 'dark' ? 'text-stone-100/70' : 'text-ink-700',
+                  tone === 'dark' ? 'text-limestone-100/70' : 'text-rich-black-700',
                 )}
               >
                 {children}

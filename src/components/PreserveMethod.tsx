@@ -18,20 +18,20 @@ const disciplines = [
 
 export function PreserveMethod() {
   return (
-    <section id="method" className="bg-stone-100 py-24 lg:py-36">
+    <section id="method" className="bg-limestone-100 py-16 lg:py-24">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-10">
         <Reveal className="max-w-xl">
           <Eyebrow tone="dark">The Method</Eyebrow>
-          <h2 className="mt-4 font-display text-3xl leading-tight text-ink-900 sm:text-4xl">
+          <h2 className="mt-4 font-heading text-3xl leading-tight text-rich-black-900 sm:text-4xl">
             Three disciplines. One rhythm.
           </h2>
         </Reveal>
 
-        <div className="mt-16 grid gap-12 border-t border-ink-900/10 pt-14 sm:grid-cols-3 sm:gap-8">
+        <div className="mt-16 grid gap-12 border-t border-rich-black-900/10 pt-14 sm:grid-cols-3 sm:gap-8">
           {disciplines.map((item, i) => (
             <Reveal key={item.label} delay={i * 0.08}>
-              <p className="font-mono text-xs uppercase tracking-[0.2em] text-gold-700">{item.label}</p>
-              <p className="mt-4 text-ink-700 leading-relaxed">{item.copy}</p>
+              <p className="font-micro text-xs uppercase tracking-[0.2em] text-metallic-bronze-700">{item.label}</p>
+              <p className="mt-4 text-rich-black-700 leading-relaxed">{item.copy}</p>
             </Reveal>
           ))}
         </div>

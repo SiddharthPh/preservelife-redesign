@@ -10,7 +10,7 @@ const stats = [
 
 export function PlaceProof() {
   return (
-    <section id="the-land" className="bg-stone-100 py-24 lg:py-36">
+    <section id="the-land" className="bg-limestone-100 py-16 lg:py-24">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-10">
         <div className="grid gap-14 lg:grid-cols-12 lg:gap-10">
           <Reveal className="-mx-6 lg:col-span-7 lg:mx-0">
@@ -34,10 +34,10 @@ export function PlaceProof() {
           <div className="lg:col-span-5">
             <Reveal>
               <Eyebrow tone="dark">The Land</Eyebrow>
-              <h2 className="mt-4 font-display text-3xl leading-tight text-ink-900 sm:text-4xl">
+              <h2 className="mt-4 font-heading text-3xl leading-tight text-rich-black-900 sm:text-4xl">
                 A nature preserve first. A sanctuary because of it.
               </h2>
-              <p className="mt-5 max-w-md text-ink-700 leading-relaxed">
+              <p className="mt-5 max-w-md text-rich-black-700 leading-relaxed">
                 The land came before the program. Twelve hundred acres of hardwood forest and
                 still water, held in trust and left mostly alone — the same quiet that makes the
                 work here possible.
@@ -45,12 +45,12 @@ export function PlaceProof() {
             </Reveal>
 
             <Reveal delay={0.1}>
-              <dl className="mt-10 grid grid-cols-2 gap-x-6 gap-y-8 border-t border-ink-900/10 pt-8">
+              <dl className="mt-10 grid grid-cols-2 gap-x-6 gap-y-8 border-t border-rich-black-900/10 pt-8">
                 {stats.map((stat) => (
                   <div key={stat.label}>
                     <dt className="sr-only">{stat.label}</dt>
-                    <dd className="font-mono text-3xl text-gold-600 sm:text-4xl">{stat.value}</dd>
-                    <p className="mt-1.5 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-700">
+                    <dd className="font-heading text-3xl text-metallic-bronze-600 sm:text-4xl">{stat.value}</dd>
+                    <p className="mt-1.5 font-micro text-[11px] uppercase tracking-[0.14em] text-rich-black-700">
                       {stat.label}
                     </p>
                   </div>

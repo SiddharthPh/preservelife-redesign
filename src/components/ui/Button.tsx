@@ -14,19 +14,19 @@ interface SharedProps {
 
 function classesFor(variant: Variant, tone: Tone) {
   if (variant === 'primary') {
-    return 'inline-flex items-center justify-center gap-2 font-mono text-xs uppercase tracking-[0.18em] rounded-[3px] px-7 py-4 min-h-[44px] transition-colors duration-200 bg-gold-500 text-canopy-950 hover:bg-gold-400';
+    return 'inline-flex items-center justify-center gap-2 font-micro text-xs uppercase tracking-[0.18em] rounded-[3px] px-7 py-4 min-h-[44px] transition-colors duration-200 bg-metallic-bronze-500 text-deep-forest-950 hover:bg-metallic-bronze-400';
   }
   if (variant === 'outline') {
     return cn(
-      'inline-flex items-center justify-center gap-2 font-mono text-xs uppercase tracking-[0.18em] rounded-[3px] px-7 py-4 min-h-[44px] transition-colors duration-200 border',
+      'inline-flex items-center justify-center gap-2 font-micro text-xs uppercase tracking-[0.18em] rounded-[3px] px-7 py-4 min-h-[44px] transition-colors duration-200 border',
       tone === 'dark'
-        ? 'border-mist-400/40 text-stone-100 hover:border-gold-400 hover:text-gold-400'
-        : 'border-ink-900/25 text-ink-900 hover:border-gold-700 hover:text-gold-700',
+        ? 'border-sage-400/40 text-limestone-100 hover:border-metallic-bronze-400 hover:text-metallic-bronze-400'
+        : 'border-rich-black-900/25 text-rich-black-900 hover:border-metallic-bronze-700 hover:text-metallic-bronze-700',
     );
   }
   return cn(
-    'inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.18em] py-3 min-h-[44px] transition-colors duration-200 group',
-    tone === 'dark' ? 'text-stone-100/85 hover:text-gold-400' : 'text-ink-900/80 hover:text-gold-700',
+    'inline-flex items-center gap-2 font-micro text-xs uppercase tracking-[0.18em] py-3 min-h-[44px] transition-colors duration-200 group',
+    tone === 'dark' ? 'text-limestone-100/85 hover:text-metallic-bronze-400' : 'text-rich-black-900/80 hover:text-metallic-bronze-700',
   );
 }
 
